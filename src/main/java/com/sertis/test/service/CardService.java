@@ -1,17 +1,28 @@
 package com.sertis.test.service;
 
 import com.sertis.test.model.CardObj;
+import com.sertis.test.model.CardObjRes;
+import com.sertis.test.repository.CardDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CardService {
-    public void addNewCard(CardObj cardObj) {
 
+    @Autowired
+    private CardDAO cardDAO;
+
+    public CardObjRes addNewCard(CardObj cardObj) {
+        return null;
     }
 
-    public void editCard(CardObj cardObj) {
-
+    public CardObjRes editCard(CardObj cardObj) {
+        return null;
     }
 
-    public void deleteCard(String cardId) {
-
+    public String deleteCard(String cardId) {
+        return null;
     }
+
+
 }

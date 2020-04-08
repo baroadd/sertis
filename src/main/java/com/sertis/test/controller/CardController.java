@@ -2,6 +2,7 @@ package com.sertis.test.controller;
 
 
 import com.sertis.test.model.CardObj;
+import com.sertis.test.model.CardObjRes;
 import com.sertis.test.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,18 +17,18 @@ public class CardController {
     private CardService cardService;
 
     @PostMapping("/add/card")
-    public void addNewCard(CardObj cardObj) {
-        cardService.addNewCard(cardObj);
+    public CardObjRes addNewCard(CardObj cardObj) {
+        return cardService.addNewCard(cardObj);
     }
 
     @PostMapping("/edit/card")
-    public void editCard(CardObj cardObj) {
-        cardService.editCard(cardObj);
+    public CardObjRes editCard(CardObj cardObj) {
+        return cardService.editCard(cardObj);
     }
 
     @GetMapping("/delete/card/{cardId}")
-    public void deleteCard(@PathVariable String cardId) {
-        cardService.deleteCard(cardId);
+    public String deleteCard(@PathVariable String cardId) {
+        return cardService.deleteCard(cardId);
     }
 
 }
